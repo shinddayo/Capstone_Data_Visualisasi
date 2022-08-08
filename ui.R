@@ -7,9 +7,9 @@ dashboardPage(
   dashboardSidebar(
     sidebarMenu(
       sliderInput("slider", "Tahun:", 2018, 2021, 2021,sep = ""),
-      menuItem("Overview", tabName = "overview", icon = icon("house")),
+      menuItem("Beranda", tabName = "overview", icon = icon("house")),
       menuItem("Fasilitas Pengolah Sampah", tabName = "fasilitas", icon = icon("dumpster-fire")),
-      menuItem("About", tabName = "about", icon = icon("person"))
+      menuItem("Tentang", tabName = "about", icon = icon("person"))
     )
     
   ),
@@ -51,7 +51,7 @@ dashboardPage(
                    value= uiOutput(outputId= "VaueBankS")),
         ),
         fluidRow(
-          box(width=12,echarts4rOutput(outputId = "provinsiSampah"))
+          box(width=12,echarts4rOutput(outputId = "provinsiSampah", height = 750))
         ),
         fluidRow(
           box(width=6,echarts4rOutput(outputId = "JenisPlot")
@@ -98,7 +98,7 @@ dashboardPage(
           p("Visualisasi ini dibuat dari data Sistem Informasi Pengolahan Sampah Nasional ", 
             a("(SIPSN)", href = "https://sipsn.menlhk.go.id/sipsn/public/data/timbulan")),
           h2("Library"),
-          p("Several R library that used to create this visualization are:"),
+          p("Beberapa library R yang digunakan dalam visualisasi:"),
           p("-  Tidyverse"),
           p("-  Shiny"),
           p("-  Shinydashboard"),
