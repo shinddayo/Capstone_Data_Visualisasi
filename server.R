@@ -187,7 +187,7 @@ shinyServer(function(input, output) {
         symbol = "none",
         stack="stack",
         bind=label3
-      ) %>% 
+      ) %>%
       e_bar(
         tidak_Recycle, 
         name = "Penanganan Sampah", 
@@ -203,7 +203,7 @@ shinyServer(function(input, output) {
         bind=label1
       ) %>% 
       e_grid(containLabel = T) %>% 
-      e_title(text = "Provinsi Penghasil Sampah Terbanyak",
+      e_title(text = "Urutan Provinsi Berdasarkan Timbulan Sampah Per Tahun",
               left = "center",
               top = "0") %>% 
       e_legend(F) %>%
@@ -219,7 +219,12 @@ shinyServer(function(input, output) {
                                                      <br/>${echarts.format.addCommas(params.name)} `
                                         }
                                         ")) %>% 
-      e_axis_labels(x = "(Ton/Tahun)")
+      e_axis_labels(x = "(Ton/Tahun)")%>% 
+      e_datazoom(x_index = 0) %>% 
+      e_toolbox_feature(
+        feature =  "saveAsImage"
+      ) %>% 
+      e_color(c("#6a994e", "#ffca3a","#e56b6f"))
     
   )
   
