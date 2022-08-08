@@ -417,4 +417,4 @@ pengolah_lat<-pengolah %>%
   ungroup() 
 
 
-pengolah_lat<-left_join(pengolah_lat,lat[,c("KabupatenKota","latitude","longitude")],by=c("KabupatenKota"="KabupatenKota") )
+pengolah_lat<-left_join(pengolah_lat,distinct(lat[,c("KabupatenKota","latitude","longitude")]),by=c("KabupatenKota"="KabupatenKota") )
